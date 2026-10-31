@@ -8,16 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
 let input = document.getElementById('todo-input')
 let form = document.getElementById('todo-form')
 let ul = document.getElementById('todo-list')
-
+let error = document.getElementById('error-msg')
 form.addEventListener('submit' ,(e)=> {
      e.preventDefault()
     if(input.value.trim() !=''){
+        error.classList.add('hidden')
         let li = document.createElement('li')
 
         let delbtn = document.createElement('button')
         delbtn.className = 'delete-btn'
         delbtn.textContent = 'Delete'
-        
+    
         let span = document.createElement('span')
         span.className = 'item-text'
         span.textContent = input.value.trim()
@@ -25,11 +26,13 @@ form.addEventListener('submit' ,(e)=> {
         li.appendChild(span)
         li.appendChild(delbtn)
         ul.appendChild(li)
+        updatecount()
+        input.value = ''
         
     }
     else {
-        let error = document.getElementById('error-msg')
-        error.style.display = 'inline-block'
+        
+        error.classList.remove('hidden') 
     }
 })
 ul.addEventListener('click',(e)=> {
