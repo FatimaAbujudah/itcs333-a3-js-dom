@@ -26,6 +26,8 @@ form.addEventListener('submit' ,(e)=> {
         li.appendChild(span)
         li.appendChild(delbtn)
         ul.appendChild(li)
+        updatecount()
+        input.value = ''
         
     }
     else {
