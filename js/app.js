@@ -18,7 +18,7 @@ form.addEventListener('submit' ,(e)=> {
         let delbtn = document.createElement('button')
         delbtn.className = 'delete-btn'
         delbtn.textContent = 'Delete'
-        
+    
         let span = document.createElement('span')
         span.className = 'item-text'
         span.textContent = input.value.trim()
