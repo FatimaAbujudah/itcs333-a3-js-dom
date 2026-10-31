@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let input = document.getElementById('todo-input')
 let form = document.getElementById('todo-form')
 let ul = document.getElementById('todo-list')
-
+let error = document.getElementById('error-msg')
 form.addEventListener('submit' ,(e)=> {
      e.preventDefault()
     if(input.value.trim() !=''){
+        error.classList.add('hidden')
         let li = document.createElement('li')
 
         let delbtn = document.createElement('button')
@@ -28,8 +29,8 @@ form.addEventListener('submit' ,(e)=> {
         
     }
     else {
-        let error = document.getElementById('error-msg')
-        error.style.display = 'inline-block'
+        
+        error.classList.remove('hidden') 
     }
 })
 ul.addEventListener('click',(e)=> {
